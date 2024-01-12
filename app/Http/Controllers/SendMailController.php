@@ -17,5 +17,7 @@ class SendMailController extends Controller
     {
         $data = SendMail::create($request->all());
         Mail::to(env('MAIL_FROM_ADDRESS'))->cc($data['cc'])->send(new \App\Mail\SendMail($data));
+        toast('Send Mail Successfully','success');
+        return redirect()->back();
     }
 }

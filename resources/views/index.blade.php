@@ -70,7 +70,7 @@
 
             <div class="mb-3">
                 <label for="exampleInputEmail2" class="form-label">Upload Attachment</label>
-                <input type="file" class="form-control " name="file" id="exampleInputEmail2"  aria-describedby="emailHelp">
+{{--                <input type="file" class="form-control " name="file" id="exampleInputEmail2"  aria-describedby="emailHelp">--}}
             </div>
             @error('file')
             <span class="text-danger">{{$message}}</span>
@@ -106,6 +106,7 @@
         content_css: '//www.tiny.cloud/css/codepen.min.css'
     });
 </script>
+@include('sweetalert::alert')
 {{-- End TinyMCE Text Editor --}}
 </body>
 </html>

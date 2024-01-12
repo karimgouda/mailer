@@ -1,5 +1,5 @@
 <br> <br>
 Name:{{$content['name']}}
 <br>
-content:{{$content['content']}}
+content: {!! $content['content'] !!}
 <br>
