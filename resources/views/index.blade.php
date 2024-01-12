@@ -25,7 +25,7 @@
 
 <div class="container my-5">
     <div class="row">
-        <form action="{{route('send.sendMail')}}" method="post">
+        <form action="{{route('send.sendMail')}}" method="post" enctype="multipart/form-data">
             @csrf
 
             <div class="mb-3">
@@ -36,6 +36,13 @@
             <span class="text-danger">{{$message}}</span>
             @enderror
 
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Employ name</label>
+                <input type="text" class="form-control " name="employ_name" id="exampleInputEmail1" value="{{old('employ_name')}}" aria-describedby="emailHelp">
+            </div>
+            @error('employ_name')
+            <span class="text-danger">{{$message}}</span>
+            @enderror
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Subject</label>
                 <input type="text" class="form-control " name="subject" id="exampleInputEmail1" value="{{old('subject')}}" aria-describedby="emailHelp">
@@ -53,6 +60,13 @@
             @enderror
 
             <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">From Email address</label>
+                <input type="text" class="form-control " name="from_email" id="exampleInputEmail1" value="{{old('from_email')}}" aria-describedby="emailHelp">
+            </div>
+            @error('from_email')
+            <span class="text-danger">{{$message}}</span>
+            @enderror
+            <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Email CC</label>
                 <input type="text" class="form-control " name="cc" id="exampleInputEmail1" value="{{old('cc')}}" aria-describedby="emailHelp">
             </div>
@@ -62,15 +76,15 @@
 
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">content</label>
-                <textarea name="content" class="tinymce-editor form-control" id="textearea"   rows="5">{{ old('content') }}</textarea>
+                <textarea name="desc" class="tinymce-editor form-control" id="textearea"   rows="5">{{ old('content') }}</textarea>
             </div>
-            @error('content')
+            @error('desc')
             <span class="text-danger">{{$message}}</span>
             @enderror
 
             <div class="mb-3">
                 <label for="exampleInputEmail2" class="form-label">Upload Attachment</label>
-{{--                <input type="file" class="form-control " name="file" id="exampleInputEmail2"  aria-describedby="emailHelp">--}}
+                <input type="file" class="form-control " name="file" id="exampleInputEmail2"  aria-describedby="emailHelp">
             </div>
             @error('file')
             <span class="text-danger">{{$message}}</span>

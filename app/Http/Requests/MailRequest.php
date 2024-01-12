@@ -24,9 +24,12 @@ class MailRequest extends FormRequest
         return [
             'subject'=>'required|min:3|string',
             'email'=>'required|email',
+            'from_email'=>'required|email',
             'name'=>'required|min:3|string',
+            'employ_name'=>'required|min:3|string',
             'cc'=>'required|email',
-            'content'=>'required|min:3'
+            'desc'=>'required|min:3',
+            'file'=>'nullable',
         ];
     }
 }
